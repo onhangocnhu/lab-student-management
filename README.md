@@ -19,3 +19,14 @@ hưởng gì khi code Java đọc dữ liệu lên?
 ![alt text](images/lab1-3.png)
 
 Database không báo lỗi vì thuộc t ính `name` không có ràng buộc `NOT NULL`. Sự thiếu chặt chẽ này sẽ ảnh hưởng khi Java đọc dữ liệu lên vì Khi Java đọc một Student có `name = NULL`, biến name trong object sẽ là `null`. Nếu code không kiểm tra `null`, sẽ gây ra `NullPointerException` khi gọi các phương thức như `student.getName().length()`, `student.getName().toUpperCase()`,...
+
+
+## Lab 2: Bài tập
+### 1. Test Case 1: Lấy danh sách sinh viên
+![alt text](images/lab2-1.png)
+
+### 2. Test Case 2: Lấy chi tiết sinh viên
+![alt text](images/lab2-2.png)
+
+### 3. Test Case 3: Lấy sinh viên không tồn tại
+![alt text](images/lab2-3.png)
