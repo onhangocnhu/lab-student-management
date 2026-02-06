@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Danh Sách Sinh Viên</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Danh Sách Sinh Viên (SSR)</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Họ và Tên</th>
+        <th>Email</th>
+        <th>Tuổi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="student : ${dsSinhVien}">
+        <td th:text="${student.id}">ID Mẫu</td>
+        <td th:text="${student.name}">Tên Mẫu</td>
+        <td th:text="${student.email}">Email Mẫu</td>
+        <td th:text="${student.age}">0</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
