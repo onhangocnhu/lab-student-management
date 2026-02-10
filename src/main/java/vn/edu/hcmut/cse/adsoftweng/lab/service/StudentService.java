@@ -10,12 +10,6 @@ import vn.edu.hcmut.cse.adsoftweng.lab.repository.StudentRepository;
 
 @Service
 public class StudentService {
-  // private final StudentRepository repository;
-
-  // public StudentService(StudentRepository studentRepository) {
-  // this.repository = studentRepository;
-  // }
-
   @Autowired
   private StudentRepository repository;
 
@@ -25,5 +19,9 @@ public class StudentService {
 
   public Student getById(String id) {
     return repository.findById(id).orElse(null);
+  }
+
+  public List<Student> searchByName(String name) {
+    return repository.findByNameContaining(name);
   }
 }
