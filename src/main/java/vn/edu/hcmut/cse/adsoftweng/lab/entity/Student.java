@@ -1,5 +1,6 @@
 package vn.edu.hcmut.cse.adsoftweng.lab.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -8,9 +9,16 @@ import jakarta.persistence.Table;
 @Table(name = "students")
 public class Student {
   @Id
+  @Column(name = "id", nullable = false)
   private String id;
+
+  @Column(name = "name", nullable = false)
   private String name;
+
+  @Column(name = "email", nullable = false)
   private String email;
+
+  @Column(name = "age", nullable = false)
   private int age;
 
   public Student() {
