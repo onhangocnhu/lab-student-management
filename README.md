@@ -1,3 +1,7 @@
+<!-- Run command:
+  cmd /C "C:\Users\onhan\.vscode\extensions\redhat.java-1.52.0-win32-x64\jre\21.0.9-win32-x86_64\bin\java.exe @C:\Users\onhan\AppData\Local\Temp\cp_3v7ngesqblgv2zxiec3cx8ci7.argfile vn.edu.hcmut.cse.adsoftweng.lab.StudentManagementApplication "
+ -->
+
 ## Lab 1: Bài tập
 ### 1. Dữ liệu lớn: Hãy thử thêm ít nhất 10 sinh viên nữa.
 ![alt text](images/lab1-1.png)
@@ -30,3 +34,10 @@ Database không báo lỗi vì thuộc t ính `name` không có ràng buộc `NO
 
 ### 3. Test Case 3: Lấy sinh viên không tồn tại
 ![alt text](images/lab2-3.png)
+
+## Lab 3: Bài tập
+### Chức năng tìm kiếm
+![alt text](images/lab3-1.png)
+
+### Hiển thị có điều kiện: Sinh viên có độ tuổi từ 18 trở xuống
+![alt text](images/lab3-2.png)
