@@ -1,3 +1,37 @@
+# Hệ Thống Quản Lý Sinh Viên - Student Management
+
+## Mục Lục
+1. [Danh Sách Nhóm](#danh-sách-nhóm)
+2. [URL Công Khai](#url-công-khai)
+3. [Cài Đặt Dự Án](#cài-đặt-dự-án)
+4. [Bài Tập Lab](#bài-tập-lab)
+   - [Lab 1: Khởi Tạo & Kiến Trúc](#lab-1-bài-tập)
+   - [Lab 2: Xây Dựng Backend REST API](#lab-2-bài-tập)
+   - [Lab 3: Xây Dựng Frontend (SSR)](#lab-3-bài-tập)
+   - [Lab 4: Hoàn Thiện Sản Phẩm](#lab-4-bài-tập)
+   - [Lab 5: Docker & Triển Khai](#lab-5-bài-tập)
+
+## Danh Sách Nhóm
+| MSSV |  Họ và Tên  | Email |
+|:-----:|:--------:|:------:|
+| 2312538   | **Ôn Hà Ngọc Như** | nhu.onhangoc@hcmut.edu.vn |
+| 2310211   |  **Đặng Nguyên Bảo**  |   bao.dangnguyen@hcmut.edu.vn |
+
+## URL Công Khai
+- Render Deployment: https://lab-student-management.onrender.com/students
+- Neon: https://console.neon.tech/app/projects/polished-meadow-81350192
+
+## Cách chạy dự án
+- Clone dự án: `git clone https://github.com/onhangocnhu/lab-student-management.git`
+- Yêu cầu: Cài đặt Java Development Kit (JDK) 17+ và Docker, PostgreSQL.
+- Chạy lệnh sau để khởi động container:
+```bash
+docker compose up -d
+```
+
+- Truy cập `localhost:8080/students` để thao tác.
+
+## Bài tập Lab
 ## Lab 1: Bài tập
 ### 1. Dữ liệu lớn: Hãy thử thêm ít nhất 10 sinh viên nữa.
 ![alt text](images/lab1-1.png)
@@ -108,6 +142,6 @@ Container sẽ gồm 2 image `student-management-postgres` trên Neon và `stude
 ![alt text](images/lab5-1.2.png)
 
 ### Truy cập web
-Truy cập trang: `https://lab-student-management.onrender.com/students` đã được deploy ở `render.com`
+Truy cập trang: https://lab-student-management.onrender.com/students đã được deploy ở `render.com`
 
 Thao tác các tính năng được trình bày ở Lab 4.
