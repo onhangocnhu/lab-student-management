@@ -1,5 +1,3 @@
-
-
 ## Lab 1: Bài tập
 ### 1. Dữ liệu lớn: Hãy thử thêm ít nhất 10 sinh viên nữa.
 ![alt text](images/lab1-1.png)
@@ -81,11 +79,35 @@ spring.application.name=student-management
 spring.datasource.url=${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5433/student-management}
 spring.datasource.username=${SPRING_DATASOURCE_USERNAME:postgres}
 spring.datasource.password=${SPRING_DATASOURCE_PASSWORD:password}
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.hibernate.format_sql=true
-spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=${STRING_JPA_HIBERNATE_DIALECT:org.hibernate.dialect.PostgreSQLDialect}
+spring.jpa.hibernate.ddl-auto=${SPRING_JPA_HIBERNATE_DDL_AUTO:update}
+spring.jpa.hibernate.format_sql=${STRING_JPA_FORMAT_SQL:true}
+spring.jpa.show-sql=${STRING_JPA_SHOW_SQL:true}
 ```
 
 ### Cấu hình file môi trường
 ![alt text](images/lab4-3.png)
+
+## Lab 5: Bài tập
+### Database PostgreSQL
+- Vì đã host database lên Neon, nhóm sẽ lấy link kết nối trên trang:
+![alt text](images/lab5-0.png)
+
+- Thêm data bằng `SQL Editor`:
+![alt text](images/lab5-1.1.png)
+
+- Thay đổi file môi trường `.env`:
+![alt text](images/lab5.png)
+### Docker
+Chạy lệnh
+```bash
+docker compose up -d
+```
+
+Container sẽ gồm 2 image `student-management-postgres` trên Neon và `student-management-api` đã host lên Docker.
+![alt text](images/lab5-1.2.png)
+
+### Truy cập web
+Truy cập trang: `https://lab-student-management.onrender.com/students` đã được deploy ở `render.com`
+
+Thao tác các tính năng được trình bày ở Lab 4.
