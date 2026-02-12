@@ -2,8 +2,6 @@ package vn.edu.hcmut.cse.adsoftweng.lab.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -11,9 +9,8 @@ import jakarta.persistence.Table;
 @Table(name = "students")
 public class Student {
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id", nullable = false)
-  private Long id;
+  private String id;
 
   @Column(name = "name", nullable = false)
   private String name;
@@ -27,18 +24,18 @@ public class Student {
   public Student() {
   }
 
-  public Student(Long id, String name, String email, int age) {
+  public Student(String id, String name, String email, int age) {
     this.id = id;
     this.name = name;
     this.email = email;
     this.age = age;
   }
 
-  public Long getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(String id) {
     this.id = id;
   }
 

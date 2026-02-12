@@ -54,7 +54,13 @@ public class StudentWebController {
 	}
 
 	@PostMapping("/save")
-	public String saveStudent(Student student) {
+	public String saveStudent(Student student, Model model) {
+		if (service.getById(student.getId()) != null) {
+			model.addAttribute("student", student);
+			model.addAttribute("error", "ID sinh viên đã tồn tại!");
+			return "student-form";
+		}
+		
 		service.save(student);
 		return "redirect:/students";
 	}

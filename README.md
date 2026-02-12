@@ -1,6 +1,4 @@
-<!-- Run command:
-  cmd /C "C:\Users\onhan\.vscode\extensions\redhat.java-1.52.0-win32-x64\jre\21.0.9-win32-x86_64\bin\java.exe @C:\Users\onhan\AppData\Local\Temp\cp_3v7ngesqblgv2zxiec3cx8ci7.argfile vn.edu.hcmut.cse.adsoftweng.lab.StudentManagementApplication "
- -->
+
 
 ## Lab 1: Bài tập
 ### 1. Dữ liệu lớn: Hãy thử thêm ít nhất 10 sinh viên nữa.
@@ -54,16 +52,20 @@ Khi xóa, sẽ có nút xác nhận
  
  ### Chức năng thêm và sửa
  #### Thêm mới
+ Trường hợp thêm sinh viên với ID (MSSV) bị trùng
  ![alt text](images/lab4-1.3.1.png)
  
- Sau khi thêm thành công, sẽ điều hướng về trang danh sách
+ Sẽ có thông báo lỗi xuất hiện khi ấn lưu
  ![alt text](images/lab4-1.3.2.png)
- 
- #### Chỉnh sửa
+
+ Sau khi sửa lỗi trùng ID, thêm thành công sẽ được điều hướng về trang danh sách
  ![alt text](images/lab4-1.3.3.png)
  
- Sau khi sửa thành công, sẽ điều hướng về trang danh sách
+ #### Chỉnh sửa
  ![alt text](images/lab4-1.3.4.png)
+ 
+ Sau khi sửa thành công, sẽ điều hướng về trang danh sách
+ ![alt text](images/lab4-1.3.5.png)
  
  ### Cấu hình cơ sở dữ liệu
  Khởi tạo postgres bằng 1 docker container

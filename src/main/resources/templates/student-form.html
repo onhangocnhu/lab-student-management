@@ -10,6 +10,7 @@
       font-family: sans-serif;
       padding: 20px;
     }
+
     .form-container {
       max-width: 500px;
       margin: 0 auto;
@@ -19,17 +20,28 @@
 
 <body>
   <div class="form-container">
-    <h1 th:text="${student.id} ? 'Edit Student' : 'Add New Student'">Student Form</h1>
+    <h1 th:text="${error} ? 'Add New Student' : (${student.id} ? 'Edit Student' : 'Add New Student')">Student Form</h1>
 
-    <form th:action="${student.id} ? @{/students/update} : @{/students/save}" th:object="${student}" method="post">
-      <div class="mb-3" th:if="${student.id != null}">
+    <div th:if="${error}" class="alert alert-danger" role="alert">
+      <span th:text="${error}"></span>
+    </div>
+
+    <form th:action="${student.id != null and error == null} ? @{/students/update} : @{/students/save}"
+      th:object="${student}" method="post">
+      <div class="mb-3">
         <label for="id" class="form-label">ID</label>
-        <input type="text" class="form-control" id="id-display" th:value="${student.id}" readonly>
-        <input type="hidden" th:field="*{id}">
-        <div class="form-text">ID không thể bị thay đổi</div>
+        <div th:if="${student.id != null and error == null}">
+          <input type="text" class="form-control" id="id-display" th:value="${student.id}" readonly>
+          <input type="hidden" th:field="*{id}">
+          <div class="form-text">ID không thể bị thay đổi</div>
+        </div>
+
+        <div th:if="${student.id == null or error != null}">
+          <input type="text" class="form-control" id="id" name="id" th:field="*{id}" required>
+        </div>
       </div>
 
-      <div class="mb-3">
+      <div class=" mb-3">
         <label for="name" class="form-label">Họ và tên</label>
         <input type="text" class="form-control" id="name" name="name" th:field="*{name}" required>
       </div>
