@@ -18,6 +18,7 @@
 | 2310211   |  **Đặng Nguyên Bảo**  |   bao.dangnguyen@hcmut.edu.vn |
 
 ## URL Công Khai
+- Repository: https://github.com/onhangocnhu/lab-student-management
 - Render Deployment: https://lab-student-management.onrender.com/students
 - Neon: https://console.neon.tech/app/projects/polished-meadow-81350192
 
