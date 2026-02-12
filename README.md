@@ -97,26 +97,7 @@ spring.jpa.show-sql=${STRING_JPA_SHOW_SQL:true}
 ![alt text](images/lab5-1.1.png)
 
 - Thay đổi file môi trường `.env`:
-```bash
-# PostgreSQL Database Configuration
-POSTGRES_HOST=ep-winter-glitter-aid4d1i7-pooler.c-4.us-east-1.aws.neon.tech
-POSTGRES_DB=studentdb
-POSTGRES_USER=neondb_owner
-POSTGRES_PASSWORD=npg_7gL1ePJcICrF
-POSTGRES_PORT=5432
-
-API_PORT=8080
-
-# Spring Datasource
-SPRING_DATASOURCE_URL=jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}?sslmode=require&channel_binding=require
-SPRING_DATASOURCE_USERNAME=${POSTGRES_USER}
-SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
-SPRING_JPA_HIBERNATE_DDL_AUTO=update
-STRING_JPA_HIBERNATE_DIALECT=org.hibernate.dialect.PostgreSQLDialect
-STRING_JPA_SHOW_SQL=true
-STRING_JPA_FORMAT_SQL=true
-```
-
+![alt text](images/lab5.png)
 ### Docker
 Chạy lệnh
 ```bash
@@ -124,7 +105,7 @@ docker compose up -d
 ```
 
 Container sẽ gồm 2 image `student-management-postgres` trên Neon và `student-management-api` đã host lên Docker.
-![alt text](images/lab-5.1.2.png)
+![alt text](images/lab5-1.2.png)
 
 ### Truy cập web
 Truy cập trang: `https://lab-student-management.onrender.com/students` đã được deploy ở `render.com`
