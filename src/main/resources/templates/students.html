@@ -37,6 +37,8 @@
     <input type="text" name="keyword" placeholder="Nhập tên..." />
     <button type="submit">Tìm</button>
   </form>
+  <br>
+  <a href="/students/new" class="btn btn-primary">Thêm mới</a>
 
   <table>
     <thead>
@@ -45,6 +47,7 @@
         <th>Họ và Tên</th>
         <th>Email</th>
         <th>Tuổi</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -53,6 +56,10 @@
         <td th:text="${student.name}">Tên Mẫu</td>
         <td th:text="${student.email}">Email Mẫu</td>
         <td th:text="${student.age}">0</td>
+        <td>
+          <a th:href="@{/students/{id}(id=${student.id})}">Xem</a> |
+          <a th:href="@{/students/{id}/edit(id=${student.id})}">Chỉnh sửa</a>
+        </td>
       </tr>
     </tbody>
   </table>

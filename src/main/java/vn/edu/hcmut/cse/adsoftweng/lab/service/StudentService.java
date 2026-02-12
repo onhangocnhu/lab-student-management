@@ -24,4 +24,12 @@ public class StudentService {
   public List<Student> searchByName(String name) {
     return repository.findByNameContaining(name);
   }
+
+  public Student save(Student student) {
+    return repository.save(student);
+  }
+
+  public void deleteById(String id) {
+    repository.deleteById(id);
+  }
 }

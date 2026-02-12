@@ -1,6 +1,4 @@
-<!-- Run command:
-  cmd /C "C:\Users\onhan\.vscode\extensions\redhat.java-1.52.0-win32-x64\jre\21.0.9-win32-x86_64\bin\java.exe @C:\Users\onhan\AppData\Local\Temp\cp_3v7ngesqblgv2zxiec3cx8ci7.argfile vn.edu.hcmut.cse.adsoftweng.lab.StudentManagementApplication "
- -->
+
 
 ## Lab 1: Bài tập
 ### 1. Dữ liệu lớn: Hãy thử thêm ít nhất 10 sinh viên nữa.
@@ -41,3 +39,53 @@ Database không báo lỗi vì thuộc t ính `name` không có ràng buộc `NO
 
 ### Hiển thị có điều kiện: Sinh viên có độ tuổi từ 18 trở xuống
 ![alt text](images/lab3-2.png)
+
+## Lab 4: Bài tập
+### Trang danh sách
+![alt text](images/lab4-1.1.png)
+
+### Trang chi tiết
+![alt text](images/lab4-1.2.1.png)
+
+Khi xóa, sẽ có nút xác nhận
+![alt text](images/lab4-1.2.2.png)
+ 
+ ### Chức năng thêm và sửa
+ #### Thêm mới
+ Trường hợp thêm sinh viên với ID (MSSV) bị trùng
+ ![alt text](images/lab4-1.3.1.png)
+ 
+ Sẽ có thông báo lỗi xuất hiện khi ấn lưu
+ ![alt text](images/lab4-1.3.2.png)
+
+ Sau khi sửa lỗi trùng ID, thêm thành công sẽ được điều hướng về trang danh sách
+ ![alt text](images/lab4-1.3.3.png)
+ 
+ #### Chỉnh sửa
+ ![alt text](images/lab4-1.3.4.png)
+ 
+ Sau khi sửa thành công, sẽ điều hướng về trang danh sách
+ ![alt text](images/lab4-1.3.5.png)
+ 
+ ### Cấu hình cơ sở dữ liệu
+ Khởi tạo postgres bằng 1 docker container
+ ![alt text](images/lab4-2.png)
+ Lệnh chạy
+ ```bash
+ docker compose up -d postgres
+ ```
+ 
+ chỉnh sửa file application.properties để kết nối đúng database
+```
+spring.application.name=student-management
+spring.datasource.url=${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5433/student-management}
+spring.datasource.username=${SPRING_DATASOURCE_USERNAME:postgres}
+spring.datasource.password=${SPRING_DATASOURCE_PASSWORD:password}
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.hibernate.format_sql=true
+spring.jpa.show-sql=true
+```
+
+### Cấu hình file môi trường
+![alt text](images/lab4-3.png)
