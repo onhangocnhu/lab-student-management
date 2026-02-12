@@ -1,0 +1,51 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: student-management-postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-student-management}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-student-management}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - student-network
+    restart: unless-stopped
+
+  api-service:
+    build: .
+    container_name: student-management-api
+    ports:
+      - "${API_PORT:-8080}:8080"
+    environment:
+      SPRING_DATASOURCE_URL: ${SPRING_DATASOURCE_URL:-jdbc:postgresql://localhost:5433/student-management}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER:-postgres}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD:-password}
+      SPRING_JPA_HIBERNATE_DDL_AUTO: ${SPRING_JPA_HIBERNATE_DDL_AUTO:-update}
+      SPRING_JPA_HIBERNATE_DIALECT: ${SPRING_JPA_HIBERNATE_DIALECT:-org.hibernate.dialect.PostgreSQLDialect}
+      SPRING_JPA_SHOW_SQL: ${SPRING_JPA_SHOW_SQL:-true}
+      SPRING_JPA_FORMAT_SQL: ${SPRING_JPA_FORMAT_SQL:-true}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - student-network
+    restart: unless-stopped
+    env_file:
+      - .env
+
+volumes:
+  postgres-data:
+    driver: local
+
+networks:
+  student-network:
+    driver: bridge
