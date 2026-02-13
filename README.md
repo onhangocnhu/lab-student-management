@@ -3,7 +3,7 @@
 ## Mục Lục
 1. [Danh Sách Nhóm](#danh-sách-nhóm)
 2. [URL Công Khai](#url-công-khai)
-3. [Cài Đặt Dự Án](#cài-đặt-dự-án)
+3. [Cài Đặt Dự Án](#cách-chạy-dự-án)
 4. [Bài Tập Lab](#bài-tập-lab)
    - [Lab 1: Khởi Tạo & Kiến Trúc](#lab-1-bài-tập)
    - [Lab 2: Xây Dựng Backend REST API](#lab-2-bài-tập)
@@ -14,8 +14,8 @@
 ## Danh Sách Nhóm
 | MSSV |  Họ và Tên  | Email |
 |:-----:|:--------:|:------:|
-| 2312538   | **Ôn Hà Ngọc Như** | nhu.onhangoc@hcmut.edu.vn |
-| 2310211   |  **Đặng Nguyên Bảo**  |   bao.dangnguyen@hcmut.edu.vn |
+| 2312538   | Ôn Hà Ngọc Như | nhu.onhangoc@hcmut.edu.vn |
+| 2310211   |  Đặng Nguyên Bảo  |   bao.dangnguyen@hcmut.edu.vn |
 
 ## URL Công Khai
 - Repository: https://github.com/onhangocnhu/lab-student-management
@@ -139,7 +139,6 @@ Chạy lệnh
 docker compose up -d
 ```
 
-Container sẽ gồm 2 image `student-management-postgres` trên Neon và `student-management-api` đã host lên Docker.
 ![alt text](images/lab5-1.2.png)
 
 ### Truy cập web
