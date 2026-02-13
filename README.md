@@ -25,6 +25,7 @@
 ## Cách chạy dự án
 - Clone dự án: `git clone https://github.com/onhangocnhu/lab-student-management.git`
 - Yêu cầu: Cài đặt Java Development Kit (JDK) 17+ và Docker, PostgreSQL.
+- Dùng lệnh `cp -R .env.exmaple .env` và chỉnh sửa file `.env` với các biến môi trường phù hợp.
 - Chạy lệnh sau để khởi động container:
 ```bash
 docker compose up -d
