@@ -132,8 +132,8 @@ spring.jpa.show-sql=${STRING_JPA_SHOW_SQL:true}
 - Thêm data bằng `SQL Editor`:
 ![alt text](images/lab5-1.1.png)
 
-- Thay đổi file môi trường `.env`:
-![alt text](images/lab5.png)
+- Thay đổi file môi trường `.env` với link Neon tương ứng.
+
 ### Docker
 Chạy lệnh
 ```bash
